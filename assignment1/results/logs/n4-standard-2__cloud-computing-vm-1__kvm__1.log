@@ -1,0 +1,16 @@
+[*] Transfer benchmarks.sh to GCP VM
+[*] Check & install KVM packages
+[*] Download Ubuntu 22.04 cloud image
+Image resized.
+[*] Create Ubuntu KVM guest
+
+Starting install...
+Creating domain...                                          |    0 B  00:00     
+Domain creation completed.
+[*] Waiting for guest IP address...
+[*] Guest IP: 192.168.122.177
+[*] Waiting for guest SSH...
+[*] Guest SSH connection established.
+..........................................................status: done
+/usr/bin/sysbench
+[*] Running KVM benchmarks...

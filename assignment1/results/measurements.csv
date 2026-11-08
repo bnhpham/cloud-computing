@@ -1,0 +1,13 @@
+machine_type,vm_name,environment,repetition,timestamp,cpu_events_per_second,memory_MiB_per_second,random_read_MiB_per_second,sequential_read_MiB_per_second
+c4-standard-2,cloud-computing-vm-3,docker,1,1794167437,1340.15,24952.38,43.22,46.69
+c4-standard-2,cloud-computing-vm-3,kvm,1,1794164871,1319.29,24523.99,34.47,38.08
+c4-standard-2,cloud-computing-vm-3,native,1,1794167125,1338.29,25472.83,43.58,47.27
+c4-standard-2,cloud-computing-vm-3,qemu,1,1794165444,357.64,1375.21,26.29,28.59
+n4-standard-2,cloud-computing-vm-1,docker,1,1794166250,949.31,17313.54,40.84,45.02
+n4-standard-2,cloud-computing-vm-1,kvm,1,1794162762,907.29,17408.08,27.60,28.67
+n4-standard-2,cloud-computing-vm-1,native,1,1794165926,948.33,18481.99,41.49,43.37
+n4-standard-2,cloud-computing-vm-1,qemu,1,1794163507,233.39,875.29,19.55,20.21
+n4d-standard-2,cloud-computing-vm-2,docker,1,1794166844,1787.24,26704.79,41.72,45.61
+n4d-standard-2,cloud-computing-vm-2,kvm,1,1794163874,1769.95,25677.80,29.32,31.30
+n4d-standard-2,cloud-computing-vm-2,native,1,1794166530,1802.23,27106.05,41.02,45.36
+n4d-standard-2,cloud-computing-vm-2,qemu,1,1794164519,370.38,1096.53,24.41,25.55
