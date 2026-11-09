@@ -18,7 +18,7 @@ MACHINE_TYPES=("n4-standard-2" "n4d-standard-2" "c4-standard-2")
 ENVIRONMENTS=("native" "docker" "kvm" "qemu")
 VM_NAME_PREFIX="cloud-computing-vm"
 
-REPETITIONS=1
+REPETITIONS=5
 
 mkdir -p "${RUNS_DIR}" "${LOGS_DIR}"
 

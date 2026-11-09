@@ -1,0 +1,10 @@
+[*] Transfer benchmarks.sh to GCP VM
+[*] Check & install QEMU packages
+[*] QEMU guest already exists
+[*] Waiting for guest IP address...
+[*] Guest IP: 192.168.122.4
+[*] Waiting for guest SSH...
+[*] Guest SSH connection established.
+status: done
+/usr/bin/sysbench
+[*] Running QEMU benchmarks...

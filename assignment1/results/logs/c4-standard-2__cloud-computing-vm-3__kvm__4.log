@@ -1,0 +1,10 @@
+[*] Transfer benchmarks.sh to GCP VM
+[*] Check & install KVM packages
+[*] KVM guest already exists
+[*] Waiting for guest IP address...
+[*] Guest IP: 192.168.122.95
+[*] Waiting for guest SSH...
+[*] Guest SSH connection established.
+status: done
+/usr/bin/sysbench
+[*] Running KVM benchmarks...

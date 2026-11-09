@@ -1,0 +1,42 @@
+[*] Transfer benchmark files to VM
+[*] Install Docker and run Docker benchmarks
+[*] Docker is already installed.
+[*] Building Docker image...
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 496B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:22.04
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 3.68kB done
+#4 DONE 0.0s
+
+#5 [stage-1 1/3] FROM docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11
+#5 resolve docker.io/library/ubuntu:22.04@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11 0.0s done
+#5 DONE 0.0s
+
+#6 [stage-1 2/3] RUN apt-get update && apt-get install -y sysbench
+#6 CACHED
+
+#7 [stage-1 3/3] COPY benchmarks.sh /benchmarks.sh
+#7 CACHED
+
+#8 exporting to image
+#8 exporting layers done
+#8 exporting manifest sha256:81b28bbe12dad2f1ea3637b79150d7b8726986f2c5fffcbc442e386f7ab6adbe done
+#8 exporting config sha256:b40fb0c9060046a2d187f2da67a45f6cccc2aded9d0e5be6208419410f966abf done
+#8 exporting attestation manifest sha256:010cbd30085881da7950f8abbcbcf9d264a2521267555578b32924c9b1dbbef3 done
+#8 exporting manifest list sha256:38517994a7e057bd366a3f8c0e31a1ef5bd66b268d9f525b5ecfc70f628ca413 done
+#8 naming to docker.io/library/cc-benchmark:latest done
+#8 unpacking to docker.io/library/cc-benchmark:latest done
+#8 DONE 0.0s
+[*] Running Docker benchmarks...
+[*] Docker benchmarks completed successfully.

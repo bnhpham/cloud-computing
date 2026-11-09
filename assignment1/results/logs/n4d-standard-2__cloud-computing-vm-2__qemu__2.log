@@ -1,0 +1,33 @@
+[*] Transfer benchmarks.sh to GCP VM
+[*] Check & install QEMU packages
+Generating public/private ed25519 key pair.
+Your identification has been saved in /home/cc_student/.ssh/qemu_guest
+Your public key has been saved in /home/cc_student/.ssh/qemu_guest.pub
+The key fingerprint is:
+SHA256:9oB/9fagZdiaN1SADAmsi05on6M0cyheQ62c/sTIMWA cc_student@cloud-computing-vm-2
+The key's randomart image is:
++--[ED25519 256]--+
+|       ....+ .   |
+|        . . o .  |
+| E     .       . |
+|. . . ..        .|
+|   = o..S   .  . |
+|  *.X .o o . +.  |
+|..=%.+  . o ..B  |
+|.oo+B    .   Boo |
+| ..o.o      +. ..|
++----[SHA256]-----+
+[*] Download Ubuntu 22.04 cloud image
+Image resized.
+[*] Create Ubuntu QEMU guest
+
+Starting install...
+Creating domain...                                          |    0 B  00:00     
+Domain creation completed.
+[*] Waiting for guest IP address...
+[*] Guest IP: 192.168.122.215
+[*] Waiting for guest SSH...
+[*] Guest SSH connection established.
+...........................................................................................................................................................................................................................................................................................................................................................................................status: done
+/usr/bin/sysbench
+[*] Running QEMU benchmarks...
