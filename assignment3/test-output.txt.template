@@ -1,0 +1,39 @@
+Sending 100 requests to <NODE1_EXTERNAL_IP>:30443...
+Sending 100 requests to <NODE2_EXTERNAL_IP>:30443...
+Sending 100 requests to <NODE3_EXTERNAL_IP>:30443...
+
+Encountered 4 frontends:
+cc-frontend-854dddf95-pnlfs
+cc-frontend-854dddf95-sr5qx
+cc-frontend-854dddf95-mvkg2
+cc-frontend-854dddf95-ltbzq
+
+Encountered 6 backends:
+cc-backend-84499cb4d-d6jqq
+cc-backend-84499cb4d-wgwgw
+cc-backend-84499cb4d-cpzp8
+cc-backend-84499cb4d-q86j9
+cc-backend-84499cb4d-m45rh
+cc-backend-84499cb4d-gck67
+
+Encountered 18 reply texts:
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-m45rh)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-cpzp8)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-wgwgw)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-d6jqq)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-gck67)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-q86j9)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-d6jqq)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-m45rh)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-cpzp8)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-gck67)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-wgwgw)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-q86j9)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-d6jqq)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-m45rh)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-cpzp8)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-gck67)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-wgwgw)
+Hey! You are IP <POD_IP> and requested /etc/nginx/html/ from IP <POD_IP> (cc-backend-84499cb4d-q86j9)
+
+All tests passed.

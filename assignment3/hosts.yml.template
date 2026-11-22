@@ -1,0 +1,41 @@
+# all three GCP VMs are used as Kubernetes control plane
+kube_control_plane:
+  hosts:
+    node1:
+      ansible_host: <NODE1_EXTERNAL_IP> # external ip
+      ip: <NODE1_INTERNAL_IP> # internal ip
+      access_ip: <NODE1_INTERNAL_IP> # internal ip
+      etcd_member_name: cloud-computing-vm-1
+    node2:
+      ansible_host: <NODE2_EXTERNAL_IP>
+      ip: <NODE2_INTERNAL_IP>
+      access_ip: <NODE2_INTERNAL_IP>
+      etcd_member_name: cloud-computing-vm-2
+    node3:
+      ansible_host: <NODE3_EXTERNAL_IP>
+      ip: <NODE3_INTERNAL_IP>
+      access_ip: <NODE3_INTERNAL_IP>
+      etcd_member_name: cloud-computing-vm-3
+  vars:
+    ansible_user: cc_student
+    ansible_ssh_private_key_file: ~/.ssh/cc_ssh
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=~/.ssh/known_hosts_cc'
+
+etcd:
+  children:
+    kube_control_plane:
+
+# all three GCP VMs are used as worker nodes
+kube_node:
+  hosts:
+    node1:
+    node2:
+    node3:
+  vars:
+    ansible_become: true
+
+# For Kubespray
+k8s_cluster:
+  children:
+    kube_control_plane:
+    kube_node:

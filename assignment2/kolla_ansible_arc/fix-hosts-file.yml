@@ -1,0 +1,13 @@
+
+- hosts: control, compute
+  become: true
+
+  tasks:
+  - name: replace hosts entry to prevent duplicate entries
+    lineinfile:
+      path: /etc/hosts
+      regexp: '^10\.(10|20)\.0\..*'
+      firstmatch: yes
+      backup: yes
+      line: '#'
+      backrefs: yes

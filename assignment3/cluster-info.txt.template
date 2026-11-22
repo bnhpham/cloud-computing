@@ -1,0 +1,8 @@
+Kubernetes control plane is running at https://<NODE1_INTERNAL_IP>:6443
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+NAME    STATUS   ROLES           AGE   VERSION
+node1   Ready    control-plane   33m   v1.36.4
+node2   Ready    control-plane   32m   v1.36.4
+node3   Ready    control-plane   32m   v1.36.4
