@@ -72,7 +72,7 @@ two interdependent HTTP services.
 - Inside `kubespray/`, test the connectivity to the VMs by running `ansible -i ../hosts.yml all -m ping`.
 - Inside `kubespray/`, run `export ANSIBLE_CONFIG=$(pwd)/ansible.cfg` and the playbook `ansible-playbook -i ../hosts.yml cluster.yml` to install the Kubernetes cluster on the 3 VMs, resulting in a 3-node cluster. Each node serves as both control plane and worker.
 
-### 3. Deploy the application
+### 3. Application Deployment
 - For frontend and backend deployment, build the corresponding Docker images, login in to Docker and push the images to Docker Hub: 
 ```bash
 docker build -f backend.Dockerfile  -t <docker-username>/cc-backend:2.0  .
