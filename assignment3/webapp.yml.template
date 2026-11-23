@@ -1,0 +1,95 @@
+- name: Deploy web application
+  hosts: kube_control_plane[0]
+  become: true
+  vars:
+    ns: cc-webapp
+    kubeconfig: /etc/kubernetes/admin.conf
+  tasks:
+    - name: Install python modules for the k8s module
+      ansible.builtin.pip:
+        name: [kubernetes, PyYAML, jsonpatch]
+
+    - name: Create namespace
+      kubernetes.core.k8s:
+        kubeconfig: "{{ kubeconfig }}"
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata: {name: "{{ ns }}"}
+
+    - name: Backend deployment
+      kubernetes.core.k8s:
+        kubeconfig: "{{ kubeconfig }}"
+        state: present
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata: {name: cc-backend, namespace: "{{ ns }}"}
+          spec:
+            replicas: 6
+            selector: {matchLabels: {app: cc-backend}}
+            template:
+              metadata: {labels: {app: cc-backend}}
+              spec:
+                containers:
+                  - name: backend
+                    image: <DOCKERHUB_USER>/cc-backend:2.0
+                    ports: [{containerPort: 8080}]
+                    readinessProbe: &bprobe
+                      httpGet:
+                        path: /health
+                        port: 8080
+                        httpHeaders: [{name: CC-Health-Token, value: backend-secret}]
+                    livenessProbe: *bprobe
+
+    - name: Backend service
+      kubernetes.core.k8s:
+        kubeconfig: "{{ kubeconfig }}"
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Service
+          metadata: {name: cc-backend-service, namespace: "{{ ns }}"}
+          spec:
+            type: ClusterIP
+            selector: {app: cc-backend}
+            ports: [{port: 8080, targetPort: 8080}]
+
+    - name: Frontend deployment
+      kubernetes.core.k8s:
+        kubeconfig: "{{ kubeconfig }}"
+        state: present
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata: {name: cc-frontend, namespace: "{{ ns }}"}
+          spec:
+            replicas: 4
+            selector: {matchLabels: {app: cc-frontend}}
+            template:
+              metadata: {labels: {app: cc-frontend}}
+              spec:
+                containers:
+                  - name: frontend
+                    image: <DOCKERHUB_USER>/cc-frontend:2.1
+                    ports: [{containerPort: 8080}]
+                    readinessProbe: &fprobe
+                      httpGet:
+                        path: /health
+                        port: 8080
+                        httpHeaders: [{name: CC-Health-Token, value: frontend-secret}]
+                    livenessProbe: *fprobe
+
+    - name: Frontend service
+      kubernetes.core.k8s:
+        kubeconfig: "{{ kubeconfig }}"
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Service
+          metadata: {name: cc-frontend-service, namespace: "{{ ns }}"}
+          spec:
+            type: NodePort
+            selector: {app: cc-frontend}
+            ports: [{port: 8080, targetPort: 8080}]

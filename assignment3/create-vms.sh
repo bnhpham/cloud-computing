@@ -219,5 +219,5 @@ for i in {1..3}; do
 	# Refresh package lists quietly (sudo apt-get update -qq) and
     # install pip without interactive configuration prompts (DEBIAN_FRONTEND=noninteractive), auto-confirming (-y) and quietly (-qq)
     ssh "${SSH_FLAGS[@]}" "${USERNAME}@${IP}" \
-        'sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3-pip && pip3 --version'
+        'sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3-pip && pip3 --version' >/dev/null
 done
