@@ -86,12 +86,12 @@ docker push <docker-username>/cc-frontend:2.1
 ```bash
 ssh -i ~/.ssh/cc_ssh cc_student@<EXTERNAL_IP_OF_1_NODE> 
 ```
-Then run:
+- Then run:
 ```bash
 sudo kubectl get pods -n cc-webapp
 ```
 
-To further test the deployment, first figure out the frontend service's NodePort:
+- To further test the deployment, first figure out the frontend service's NodePort:
 ```bash
  ssh -i ~/.ssh/cc_ssh cc_student@<EXTERNAL_IP_OF_1_NODE> "sudo kubectl get svc cc-frontend-service -n cc-webapp -o jsonpath='{.spec.ports[0].nodePort}'"
 ```
