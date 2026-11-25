@@ -60,7 +60,7 @@ In this assignment, we build our own small Infrastructure-as-a-Service (IaaS) cl
 ## Assignment 3: Kubernetes Cluster
 
 In this assignment, we use Kubernetes and Ansible to set up a small, distributed infrastructure of 
-two interdependent HTTP services.
+two interdependent HTTP services selfhosted on 3 GCP VMs.
 
 ### 1. Virtual Machines
 - Run `create-vms.sh` to create 3 VMs with machine type `n2-standard-2` and install the python-pip package on each VM.
